@@ -4,6 +4,7 @@ import { BaseLayout } from '@/components/layout/base-layout'
 import { ProtectedRoute } from '@/components/auth/protected-route'
 import { ToastProvider } from '@/components/providers/toast-provider'
 import { ThemeProvider } from '@/components/providers/theme-provider'
+import { SupabaseConfigWarning } from '@/components/SupabaseConfigWarning'
 
 import HomePage from '@/pages/home'
 import LoginPage from '@/pages/auth/login'
@@ -17,6 +18,7 @@ export default function App() {
       <ThemeProvider defaultTheme="system" storageKey="app-theme">
         <ToastProvider>
           <BaseLayout>
+            <SupabaseConfigWarning />
             <Routes>
               {/* Public routes */}
               <Route path="/" element={<HomePage />} />
